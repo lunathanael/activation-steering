@@ -353,3 +353,7 @@ class LeashLayer(nn.Module):
         cls.condition_layers = None
         cls.behavior_layers = None
         cls.condition_similarities = defaultdict(lambda: defaultdict(float))
+
+    @property
+    def attention_type(self):
+        return self.layer.attention_type;
