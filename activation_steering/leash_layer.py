@@ -35,6 +35,7 @@ class LeashLayer(nn.Module):
         """
         super().__init__()
         self.layer = layer
+        self.attention_type = layer.attention_type
         self.layer_id = layer_id
         self.use_ooi_preventive_normalization = False
         self.apply_behavior_on_first_call = True
@@ -353,7 +354,3 @@ class LeashLayer(nn.Module):
         cls.condition_layers = None
         cls.behavior_layers = None
         cls.condition_similarities = defaultdict(lambda: defaultdict(float))
-
-    @property
-    def attention_type(self):
-        return self.layer.attention_type;
